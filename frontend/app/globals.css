@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --page-from: #eef6ff;
+  --page-via: #fff8f1;
+  --page-to: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface-muted: rgba(226, 232, 240, 0.68);
+  --field: rgba(255, 255, 255, 0.92);
+  --border: rgba(15, 23, 42, 0.12);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+  --nav: rgba(255, 255, 255, 0.82);
+  --footer: rgba(248, 250, 252, 0.94);
+  --glow-blue: rgba(42, 141, 255, 0.18);
+  --glow-orange: rgba(249, 115, 22, 0.16);
+  --panel-gradient-from: #eff6ff;
+  --panel-gradient-to: #dbeafe;
+  --shadow: rgba(15, 23, 42, 0.16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root[data-theme="dark"] {
+  --background: #0b1f3a;
+  --foreground: #ffffff;
+  --page-from: #0b1f3a;
+  --page-via: #13284d;
+  --page-to: #0b1f3a;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(8, 21, 35, 0.9);
+  --surface-muted: rgba(8, 22, 35, 0.8);
+  --field: #07111f;
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #ffffff;
+  --text-muted: #d1d5db;
+  --text-soft: #9ca3af;
+  --nav: rgba(8, 20, 35, 0.8);
+  --footer: rgba(7, 17, 31, 0.9);
+  --glow-blue: rgba(59, 130, 246, 0.2);
+  --glow-orange: rgba(249, 115, 22, 0.1);
+  --panel-gradient-from: #122a54;
+  --panel-gradient-to: #0b1f3a;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0b1f3a;
+    --foreground: #ffffff;
+    --page-from: #0b1f3a;
+    --page-via: #13284d;
+    --page-to: #0b1f3a;
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-strong: rgba(8, 21, 35, 0.9);
+    --surface-muted: rgba(8, 22, 35, 0.8);
+    --field: #07111f;
+    --border: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+    --text-muted: #d1d5db;
+    --text-soft: #9ca3af;
+    --nav: rgba(8, 20, 35, 0.8);
+    --footer: rgba(7, 17, 31, 0.9);
+    --glow-blue: rgba(59, 130, 246, 0.2);
+    --glow-orange: rgba(249, 115, 22, 0.1);
+    --panel-gradient-from: #122a54;
+    --panel-gradient-to: #0b1f3a;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes ctaPulse {
+  0%,
+  100% {
+    box-shadow: 0 20px 35px -18px rgba(239, 68, 68, 0.45);
+  }
+
+  50% {
+    box-shadow: 0 24px 48px -16px rgba(220, 38, 38, 0.7);
+  }
+}
