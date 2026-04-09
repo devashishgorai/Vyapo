@@ -4,8 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Phone, RefreshCw, ShieldCheck } from "lucide-react";
+import { buildApiUrl, getApiBaseUrl } from "@/lib/api";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050";
 const ADMIN_KEY_STORAGE = "vyapo-admin-key";
 
 type ContactRequest = {
@@ -42,6 +42,14 @@ export default function AdminPage() {
     setStatus("loading");
     setError("");
 
+    const apiBaseUrl = getApiBaseUrl();
+
+    if (!apiBaseUrl && process.env.NODE_ENV === "production") {
+      setStatus("error");
+      setError("Configure NEXT_PUBLIC_API_URL in Vercel so the admin panel can reach your backend.");
+      return;
+    }
+
     try {
       const headers: HeadersInit = {};
 
@@ -49,7 +57,7 @@ export default function AdminPage() {
         headers["x-admin-key"] = key.trim();
       }
 
-      const response = await fetch(`${API_BASE_URL}/api/requests`, {
+      const response = await fetch(buildApiUrl("/api/requests"), {
         headers,
         cache: "no-store",
       });

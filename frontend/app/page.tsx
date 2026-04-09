@@ -6,9 +6,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, Phone, Shield, BarChart3 } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
 import ThemeToggle from "@/components/ThemeToggle";
+import { buildApiUrl, getApiBaseUrl } from "@/lib/api";
 import { features, whyChoose, stats, testimonials } from "@/data/features";
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050";
 
 const socialLinks = [
   { name: "Facebook", icon: "facebook", href: "#" },
@@ -111,11 +110,19 @@ export default function Home() {
     setFormStatus("submitting");
     setFormError("");
 
+    const apiBaseUrl = getApiBaseUrl();
+
+    if (!apiBaseUrl && process.env.NODE_ENV === "production") {
+      setFormStatus("error");
+      setFormError("Configure NEXT_PUBLIC_API_URL in Vercel so the contact form can reach your backend.");
+      return;
+    }
+
     const form = event.currentTarget;
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/requests`, {
+      const response = await fetch(buildApiUrl("/api/requests"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
