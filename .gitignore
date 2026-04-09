@@ -1,0 +1,10 @@
+backend/node_modules
+frontend/node_modules
+backend/.env
+frontend/.env.local
+frontend/.env
+.DS_Store
+.vercel
+.next
+backend/npm-debug.log*
+frontend/npm-debug.log*
