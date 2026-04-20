@@ -373,22 +373,27 @@ export default function Home() {
               </p>
               <span className="hidden h-px flex-1 bg-red-200 md:block" />
             </div>
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              {testimonials.map((client) => (
-                <div
-                  key={client.name}
-                  className="partner-logo-card flex h-24 w-44 items-center justify-center rounded-3xl bg-white p-4 shadow-xl shadow-red-950/5 ring-1 ring-red-100"
-                >
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    width={160}
-                    height={90}
-                    unoptimized
-                    className="partner-logo-image max-h-16 w-auto object-contain"
-                  />
-                </div>
-              ))}
+            <div className="partner-marquee mt-14" aria-label="Restaurant partners logo marquee">
+              <div className="partner-marquee-track">
+                {[0, 1].map((copy) => (
+                  <ul key={copy} className="partner-marquee-list" aria-hidden={copy === 1}>
+                    {testimonials.map((client) => (
+                      <li key={`${copy}-${client.name}`} className="partner-marquee-item">
+                        <div className="partner-marquee-card flex h-24 w-44 items-center justify-center rounded-3xl bg-white p-4 shadow-xl shadow-red-950/5 ring-1 ring-red-100">
+                          <Image
+                            src={client.logo}
+                            alt={copy === 0 ? `${client.name} logo` : ""}
+                            width={160}
+                            height={90}
+                            unoptimized
+                            className="partner-marquee-image max-h-16 w-auto object-contain"
+                          />
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
             </div>
           </div>
         </section>

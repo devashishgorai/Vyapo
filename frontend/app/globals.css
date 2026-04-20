@@ -99,84 +99,80 @@ html {
   }
 }
 
-@keyframes partnerLogoFloat {
-  0%,
-  100% {
+@keyframes partnerMarquee {
+  from {
     transform: translate3d(0, 0, 0);
   }
 
-  50% {
-    transform: translate3d(0, -3px, 0);
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-.partner-logo-card {
-  position: relative;
-  isolation: isolate;
+.partner-marquee {
+  --marquee-gap: clamp(1rem, 2.8vw, 2.8rem);
+  --marquee-duration: 24s;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  will-change: transform, opacity;
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms ease-in-out;
-  animation: partnerLogoFloat 6s ease-in-out infinite;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-.partner-logo-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 18px 38px -20px rgba(220, 38, 38, 0.5), 0 0 26px -16px rgba(239, 68, 68, 0.65);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 320ms ease-in-out;
+.partner-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: partnerMarquee var(--marquee-duration) linear infinite;
 }
 
-.partner-logo-card:hover {
-  transform: translate3d(0, -4px, 0);
+.partner-marquee:hover .partner-marquee-track {
   animation-play-state: paused;
 }
 
-.partner-logo-card:hover::after {
-  opacity: 1;
+.partner-marquee-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--marquee-gap) 0 0;
+  gap: var(--marquee-gap);
+  flex-shrink: 0;
 }
 
-.partner-logo-card:nth-child(2) {
-  animation-delay: 0.6s;
+.partner-marquee-item {
+  flex: 0 0 auto;
 }
 
-.partner-logo-card:nth-child(3) {
-  animation-delay: 1.2s;
+.partner-marquee-card {
+  transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
-.partner-logo-card:nth-child(4) {
-  animation-delay: 1.8s;
+.partner-marquee-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -22px rgba(220, 38, 38, 0.5);
 }
 
-.partner-logo-image {
-  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-  transform-origin: center;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
-  transition: transform 760ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease-in-out;
+.partner-marquee-image {
+  transform: translate3d(0, 0, 0);
+  transition: transform 260ms ease, opacity 220ms ease;
 }
 
-.partner-logo-card:hover .partner-logo-image {
-  transform: translate3d(0, 0, 0) rotate(360deg) scale(1.1);
+.partner-marquee-card:hover .partner-marquee-image {
+  transform: scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .partner-logo-card {
+  .partner-marquee-track {
     animation: none;
+  }
+
+  .partner-marquee-card,
+  .partner-marquee-image {
     transition-duration: 0ms;
   }
 
-  .partner-logo-card::after,
-  .partner-logo-image {
-    transition-duration: 0ms;
-  }
-
-  .partner-logo-card:hover,
-  .partner-logo-card:hover .partner-logo-image {
+  .partner-marquee-card:hover,
+  .partner-marquee-card:hover .partner-marquee-image {
     transform: none;
   }
 }
