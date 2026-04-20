@@ -86,7 +86,7 @@ export const testimonials = [
     name: "Gharelu Khana",
     role: "Restaurant Partner",
     content: "Gharelu Khana brings 'ghar jaisa taste' to customers far from home.",
-    logo: "/clients/gharelu-khana.png",
+    logo: "/clients/gharelu-khana.jpg",
   },
   {
     name: "Rainbow School",
