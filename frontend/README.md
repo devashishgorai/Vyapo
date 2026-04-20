@@ -64,6 +64,6 @@ public/              Logo, favicon, client, and product preview assets
 ## Contact Details
 
 - Phone: +91 7029214041
-- Email: mukherjeesujit602@gmail.com
+ - Email: Vyapoindia@gmail.com
 - Location: Newtown, Kolkata - 700135
 - Instagram: https://www.instagram.com/vyapoindia

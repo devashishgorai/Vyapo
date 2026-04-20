@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="100%" height="100%" rx="20" fill="#fff8f2"/>
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="160" height="160" rx="16" fill="#FDE68A"/>
+    <text x="190" y="60" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#1f2937" font-weight="700">Gharelu Khana</text>
+    <text x="190" y="95" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">Ghar jaisa taste, ghar se dur</text>
+    <circle cx="80" cy="80" r="28" fill="#fff" stroke="#f59e0b" stroke-width="4"/>
+    <path d="M62 82c6-8 18-8 24 0" stroke="#f97316" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

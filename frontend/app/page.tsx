@@ -456,7 +456,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Image src="/gmail-icon.png" alt="" width={18} height={18} className="h-[18px] w-[18px] shrink-0" />
-                    <span>mukherjeesujit602@gmail.com</span>
+                    <span>Vyapoindia@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Image src="/location-icon.png" alt="" width={18} height={18} className="h-[18px] w-[18px] shrink-0" />
@@ -582,14 +582,14 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="mailto:mukherjeesujit602@gmail.com"
+                  href="mailto:Vyapoindia@gmail.com"
                   className="group rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-[#2A8DFF]/60 hover:bg-white/[0.1]"
                 >
                   <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A8DFF] text-white">
                     <Image src="/gmail-icon.png" alt="" width={28} height={28} className="h-7 w-7" />
                   </span>
                   <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Email</p>
-                  <p className="mt-2 break-words text-lg font-semibold text-white transition group-hover:text-[#93C5FD]">mukherjeesujit602@gmail.com</p>
+                  <p className="mt-2 break-words text-lg font-semibold text-white transition group-hover:text-[#93C5FD]">Vyapoindia@gmail.com</p>
                 </a>
 
                 <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 sm:col-span-2">
