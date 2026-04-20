@@ -86,12 +86,12 @@ export const testimonials = [
     name: "Gharelu Khana",
     role: "Restaurant Partner",
     content: "Gharelu Khana brings 'ghar jaisa taste' to customers far from home.",
-    logo: "/clients/gharelu-khana.svg",
+    logo: "/clients/gharelu-khana.png",
   },
   {
     name: "Rainbow School",
     role: "School Partner",
     content: "Rainbow School uses VYAPO to simplify canteen billing and streamline meal management for students.",
-    logo: "/clients/rainbow-school.svg",
+    logo: "/clients/rainbow-school.jpeg",
   },
 ];
