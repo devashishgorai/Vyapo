@@ -377,7 +377,7 @@ export default function Home() {
               {testimonials.map((client) => (
                 <div
                   key={client.name}
-                  className="group flex h-24 w-44 items-center justify-center rounded-3xl bg-white p-4 shadow-xl shadow-red-950/5 ring-1 ring-red-100 transition duration-300 hover:-translate-y-1 hover:shadow-red-950/10"
+                  className="partner-logo-card flex h-24 w-44 items-center justify-center rounded-3xl bg-white p-4 shadow-xl shadow-red-950/5 ring-1 ring-red-100"
                 >
                   <Image
                     src={client.logo}
@@ -385,7 +385,7 @@ export default function Home() {
                     width={160}
                     height={90}
                     unoptimized
-                    className="max-h-16 w-auto object-contain transition duration-300 group-hover:scale-105"
+                    className="partner-logo-image max-h-16 w-auto object-contain"
                   />
                 </div>
               ))}

@@ -85,13 +85,13 @@ export const testimonials = [
   {
     name: "Gharelu Khana",
     role: "Restaurant Partner",
-    content: "Gharelu Khana brings 'ghar jaisa taste' to customers far from home.",
+    content: "Gharelu Khana uses VYAPO with an admin panel and Android/iOS customer app for seamless service and management.",
     logo: "/clients/gharelu-khana.jpg",
   },
   {
     name: "Rainbow School",
     role: "School Partner",
-    content: "Rainbow School uses VYAPO to simplify canteen billing and streamline meal management for students.",
+    content: "Rainbow School uses VYAPO as a complete school management system to streamline operations for students, staff, and administration.",
     logo: "/clients/rainbow-school.jpeg",
   },
 ];
