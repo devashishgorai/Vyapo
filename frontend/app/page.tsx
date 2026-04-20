@@ -384,6 +384,7 @@ export default function Home() {
                     alt={`${client.name} logo`}
                     width={160}
                     height={90}
+                    unoptimized
                     className="max-h-16 w-auto object-contain transition duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -419,6 +420,7 @@ export default function Home() {
                         alt={`${testimonial.name} logo`}
                         fill
                         sizes="112px"
+                        unoptimized
                         className="object-contain p-1"
                       />
                     </div>
