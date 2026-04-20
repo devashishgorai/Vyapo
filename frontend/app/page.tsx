@@ -416,25 +416,25 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl shadow-black/20 backdrop-blur-xl"
+                  className="group rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl shadow-black/20 backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:border-[#F97316]/40 hover:bg-white/[0.09] hover:shadow-[0_28px_56px_-30px_rgba(249,115,22,0.55)]"
                 >
                   <div className="mb-6 flex items-center gap-4">
-                    <div className="relative h-20 w-28 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-md shadow-black/20">
+                    <div className="relative h-20 w-28 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-md shadow-black/20 transition duration-300 group-hover:scale-105 group-hover:border-[#F97316]/25 group-hover:shadow-[0_16px_30px_-20px_rgba(249,115,22,0.8)]">
                       <Image
                         src={testimonial.logo}
                         alt={`${testimonial.name} logo`}
                         fill
                         sizes="112px"
                         unoptimized
-                        className="object-contain p-1"
+                        className="object-contain p-1 transition duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-white">{testimonial.name}</p>
-                      <p className="text-sm text-slate-400">{testimonial.role}</p>
+                      <p className="font-semibold text-white transition-colors duration-300 group-hover:text-[#FDBA74]">{testimonial.name}</p>
+                      <p className="text-sm text-slate-400 transition-colors duration-300 group-hover:text-slate-300">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-slate-300">&ldquo;{testimonial.content}&rdquo;</p>
+                  <p className="text-slate-300 transition-colors duration-300 group-hover:text-slate-100">&ldquo;{testimonial.content}&rdquo;</p>
                 </motion.div>
               ))}
             </div>
